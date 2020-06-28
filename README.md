@@ -6,21 +6,20 @@
 |mail|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :groups
+- has_many :comments
 
-## groups_usersテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|group_name|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :comments
+- has_many :user
 
-## groups_usersテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
