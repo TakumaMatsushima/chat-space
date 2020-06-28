@@ -1,3 +1,14 @@
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|mail|string|null: false|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 ## groups_usersテーブル
 
 |Column|Type|Options|
@@ -8,6 +19,19 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
