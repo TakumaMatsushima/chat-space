@@ -8,23 +8,28 @@
 ### Association
 - has_many :groups,  through:  :users_groups
 - has_many :comments
+- has_many :users_groups
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :comments
 - has_many :users,  through:  :users_groups
+- has_many :users_groups
 
 ## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|integer|null: false|
+|text|text|null: false|
+|img|text|null: false|
 |user_id|integer|null: false|
+|group_id|integer|null: false|
+
 
 ### Association
 - belongs_to :group
@@ -39,8 +44,8 @@
 
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 
 # README
